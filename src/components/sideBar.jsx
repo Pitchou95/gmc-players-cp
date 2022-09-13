@@ -7,6 +7,7 @@ import {
   BsFillFileCodeFill,
   BsLayersHalf,BsEnvelopeOpen
 } from "react-icons/bs";
+import { FaBlog } from "react-icons/fa";
 const Sidebar = () => {
   return (
     <header id="header">
@@ -84,6 +85,14 @@ const Sidebar = () => {
                   <BsLayersHalf />
                 </i>
                 <span>Portfolio</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://blog.laraibi.tech" target="_blank">
+                <i>
+                  <FaBlog />
+                </i>
+                <span>Blog</span>
               </a>
             </li>
             <li>

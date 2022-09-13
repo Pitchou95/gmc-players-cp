@@ -41,69 +41,6 @@ const Skills = () => {
                 <img className="img-skill" src={img} alt="" />
               </li>
             ))}
-            {/* <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                className="img-skill"
-                src={}
-                alt=""
-              />
-            </li> */}
           </ul>
         </div>
       </div>

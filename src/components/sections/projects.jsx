@@ -1,9 +1,17 @@
-import React from "react";
-import portfolio_1 from  "../../assets/img/portfolio/portfolio-1.jpg"
-import portfolio_2 from  "../../assets/img/portfolio/portfolio-2.jpg"
-import portfolio_3 from  "../../assets/img/portfolio/portfolio-3.png"
-import portfolio_4 from  "../../assets/img/portfolio/portfolio-4.svg"
+import React, { useState } from "react";
+import { AiOutlineLink, AiOutlinePlus } from "react-icons/ai";
 const Projects = () => {
+  const [protfollios] = useState(() => {
+    let arr = [];
+    for (let i = 0; i < 4; i++) {
+      arr[i] = require("../../assets/img/portfolio/1 (" +
+        parseInt(i + 1) +
+        ").png");
+      //   console.log(i);
+    }
+    return arr;
+  });
+  const [hoveredPortfollio, setHoveredPortfollio] = useState(-1);
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
@@ -33,97 +41,48 @@ const Projects = () => {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div className="portfolio-wrap">
-              <img
-                src={portfolio_1}
-                className="img-fluid"
-                alt=""
-              />
-              <div className="portfolio-links">
-                <a
-                  href="assets/img/portfolio/portfolio-1.jpg"
-                  data-gall="portfolioGallery"
-                  className="venobox"
-                  title="App 1"
+          {protfollios.map((pSrc, key) => (
+            <div
+              key={`portfo-${key}`}
+              className="col-lg-4 col-md-6 portfolio-item filter-app"
+              onMouseMove={() => setHoveredPortfollio(key)}
+              onMouseLeave={() => setHoveredPortfollio(-1)}
+            >
+              <div className="portfolio-wrap">
+                <img src={pSrc} className="img-fluid" alt="" />
+                <p
+                  style={{
+                    display: `${hoveredPortfollio == key ? "block" : "none"}`,
+                    textAlign: "center",
+                    position: "absolute",
+                    top: 15,
+                    color: "#1D8BBE",
+                    fontSize: "22px",
+                  }}
                 >
-                  <i className="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-details_1.html" title="More Details">
-                  <i className="bx bx-link"></i>
-                </a>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
+                  nostrum fuga temporibus laboriosam animi deleniti repellendus.
+                </p>
+                <div className="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-1.jpg"
+                    data-gall="portfolioGallery"
+                    className="venobox"
+                    title="App 1"
+                  >
+                    <i>
+                      <AiOutlinePlus />
+                    </i>
+                  </a>
+                  <a href="portfolio-details_1.html" title="More Details">
+                    <i>
+                      <AiOutlineLink />
+                    </i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-CRM">
-            <div className="portfolio-wrap">
-              <img
-                src={portfolio_2}
-                className="img-fluid"
-                alt=""
-              />
-              <div className="portfolio-links">
-                <a
-                  href="assets/img/portfolio/portfolio-2.jpg"
-                  data-gall="portfolioGallery"
-                  className="venobox"
-                  title="Web 3"
-                >
-                  <i className="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-details_2.html" title="More Details">
-                  <i className="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div className="portfolio-wrap">
-              <img
-                src={portfolio_3}
-                className="img-fluid"
-                alt=""
-              />
-              <div className="portfolio-links">
-                <a
-                  href="assets/img/portfolio/portfolio-3.png"
-                  data-gall="portfolioGallery"
-                  className="venobox"
-                  title="App 2"
-                >
-                  <i className="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-details_3.html" title="More Details">
-                  <i className="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-CRM">
-            <div className="portfolio-wrap">
-              <img
-                src={portfolio_4}
-                className="img-fluid"
-                alt=""
-              />
-              <div className="portfolio-links">
-                <a
-                  href="assets/img/portfolio/portfolio-4.svg"
-                  data-gall="portfolioGallery"
-                  className="venobox"
-                  title="Web 3"
-                >
-                  <i className="bx bx-plus"></i>
-                </a>
-                <a href="portfolio-details_4.html" title="More Details">
-                  <i className="bx bx-link"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
