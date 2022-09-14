@@ -1,17 +1,33 @@
 import React, { useState } from "react";
-import { AiOutlineLink, AiOutlinePlus } from "react-icons/ai";
+import { BiShowAlt } from "react-icons/bi";
+import projetsList from "../../assets/utils/data";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 const Projects = () => {
-  const [protfollios] = useState(() => {
-    let arr = [];
-    for (let i = 0; i < 4; i++) {
-      arr[i] = require("../../assets/img/portfolio/1 (" +
-        parseInt(i + 1) +
-        ").png");
-      //   console.log(i);
-    }
-    return arr;
-  });
+  const portfolio = projetsList;
+  // console.log(portfolio[0].galerie());
+  // const [protfollios] = useState(() => {
+  //   let arr = [];
+  //   for (let i = 0; i < 4; i++) {
+  //     arr[i] = require("../../assets/img/portfolio/1 (1).png");
+  //     //   console.log(i);
+  //   }
+  //   return arr;
+  // });
+
   const [hoveredPortfollio, setHoveredPortfollio] = useState(-1);
+  const [projectToShowIndex, setProjectToShowIndex] = useState(-1);
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => {
+    setProjectToShowIndex(-1);
+    setShowModal(false);
+  };
+  const handleShowModal = (projectIndex) => {
+    setProjectToShowIndex(projectIndex);
+    setShowModal(true);
+  };
+
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
@@ -41,7 +57,7 @@ const Projects = () => {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          {protfollios.map((pSrc, key) => (
+          {portfolio.map((project, key) => (
             <div
               key={`portfo-${key}`}
               className="col-lg-4 col-md-6 portfolio-item filter-app"
@@ -49,7 +65,7 @@ const Projects = () => {
               onMouseLeave={() => setHoveredPortfollio(-1)}
             >
               <div className="portfolio-wrap">
-                <img src={pSrc} className="img-fluid" alt="" />
+                <img src={project.img} className="img-fluid" alt="" />
                 <p
                   style={{
                     display: `${hoveredPortfollio == key ? "block" : "none"}`,
@@ -60,23 +76,16 @@ const Projects = () => {
                     fontSize: "22px",
                   }}
                 >
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
-                  nostrum fuga temporibus laboriosam animi deleniti repellendus.
+                  {project.title}
                 </p>
                 <div className="portfolio-links">
                   <a
-                    href="assets/img/portfolio/portfolio-1.jpg"
-                    data-gall="portfolioGallery"
-                    className="venobox"
-                    title="App 1"
+                    onClick={() => handleShowModal(key)}
+                    href="#"
+                    title="More Details"
                   >
                     <i>
-                      <AiOutlinePlus />
-                    </i>
-                  </a>
-                  <a href="portfolio-details_1.html" title="More Details">
-                    <i>
-                      <AiOutlineLink />
+                      <BiShowAlt />
                     </i>
                   </a>
                 </div>
@@ -85,6 +94,28 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      {showModal ? (
+        <Modal  size="lg" centered show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>{projetsList[projectToShowIndex].title}</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <p>{projetsList[projectToShowIndex].description}</p>
+            <ul>
+              {projetsList[projectToShowIndex].tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      ) : null}
     </section>
   );
 };
