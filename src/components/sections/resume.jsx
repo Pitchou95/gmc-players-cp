@@ -1,16 +1,38 @@
 import React from "react";
-
+import { TypeAnimation } from "react-type-animation";
+import audio from "../../assets/utils/type-writing-6834.mp3";
+import { useEffect } from "react";
+import Slide from "react-reveal/Slide";
 const Resume = () => {
+  const typing = new Audio(audio);
+  typing.loop = true;
+  // typing.autoplay = true;
+  useEffect(() => {
+    // typing.play();
+  }, []);
   return (
     <section id="resume" className="resume">
       <div className="container">
         <div className="section-title">
           <h2>Resume</h2>
-          <p>
-            Developpeur full stack, je participe aux differents aspects du
-            developpement de votre projet, depuis son analyse, conception
-            jusqu'a son deploiement finale.
-          </p>
+          <Slide right>
+            <TypeAnimation
+              sequence={[
+                `Developpeur full stack, je participe aux differents aspects du
+              developpement de votre projet, depuis son analyse, conception
+              jusqu'a son deploiement finale.`,
+                ,
+                200,
+                () => {
+                  typing.pause();
+                  // alert('done')
+                },
+              ]}
+              wrapper="p"
+              speed={75}
+
+            />
+          </Slide>
         </div>
 
         <div className="row">

@@ -1,0 +1,40 @@
+.portfolio-item {
+  background-color: #431547;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  // margin-right: 2px;
+  .row {
+    margin-bottom: 10px;
+  }
+  .btn {
+    background-color: #e0a800 !important;
+    border: #e0a800;
+    i {
+      color: white !important;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  .portfolio-wrap img {
+    height: 90px !important;
+    width: 100%;
+  }
+}
+
+#myBadge {
+  background-color: #862a8e !important;
+}
+.projectTitle {
+  color: #e0a800 !important;
+}
+.ArrowButton__Button-sc-1ikb0hj-1{
+  background-color: #e0a800 !important;
+  opacity: 1;
+  &:hover{
+    background-color: white !important;
+  }
+}

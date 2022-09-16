@@ -1,12 +1,22 @@
-ul#listSkillsImg{
-    list-style: none;
-}
-ul#listSkillsImg li{
-    width: 4rem;
-    display: inline-block;
-    margin: 4rem;
-}
-ul#listSkillsImg li img{
-    width: 4rem;
-    height: 4rem;
+// ul#listSkillsImg{
+//     list-style: none;
+// }
+// ul#listSkillsImg li{
+//     width: 4rem;
+//     display: inline-block;
+//     margin: 4rem;
+// }
+// ul#listSkillsImg li img{
+//     width: 4rem;
+//     height: 4rem;
+// }
+
+
+#skills .col-2{
+    margin: 10px;
+    border-radius: 10%;
+    // padding: 30px;
+    border: 2px solid #65206B ;
+    background-color: #65206B;
+    box-shadow: 5px 5px 5px #220B24;
 }

@@ -1,23 +1,48 @@
 import React from "react";
 import { BsChevronRight } from "react-icons/bs";
 import profileImg from "../../assets/img/profile-img.jpg";
+import "../../styles/about.scss";
+import { TypeAnimation } from "react-type-animation";
+import audio from "../../assets/utils/type-writing-6834.mp3";
+import { useEffect } from "react";
+import Slide from 'react-reveal/Slide';
+
 const About = () => {
   const dob = new Date("08/10/1992");
   const month_diff = Date.now() - dob.getTime();
   const age_dt = new Date(month_diff);
   const year = age_dt.getUTCFullYear();
   const age = Math.abs(year - 1970);
+  const typing= new Audio(audio);
+  typing.loop = true;
+  // typing.autoplay = true;
+  useEffect(() => {
+    // typing.play();
+  }, []);
   return (
     <section id="about" className="about">
       <div className="container">
         <div className="section-title">
           <h2>About</h2>
-          <p>
-            Passionné par les possibilités de développement offertes par la
-            technologie et l'outil informatique, j'ai consacré mon cursus et ma
-            carrière professionnels dans la compréhension des mécanismes de cet
-            univers et à la participation à son développement.
-          </p>
+          <Slide right>
+          <TypeAnimation
+            sequence={[
+              `Passionné par les possibilités de développement offertes par la
+              technologie et l'outil informatique, j'ai consacré mon cursus et ma
+              carrière professionnels dans la compréhension des mécanismes de cet
+              univers et à la participation à son développement.`,
+              ,
+              200,
+              () => {
+                typing.pause();
+                // alert('done')
+              },
+            ]}
+            wrapper="p"
+            speed={75}
+          />
+
+        </Slide>
         </div>
 
         <div className="row">

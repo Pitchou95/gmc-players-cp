@@ -1,20 +1,40 @@
 import React from "react";
 import { BsFillEnvelopeFill, BsFillTelephoneFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-import Gmap from "./gMap";
+import { TypeAnimation } from "react-type-animation";
+import audio from "../../assets/utils/type-writing-6834.mp3";
+import { useEffect } from "react";
+import Slide from "react-reveal/Slide";
 const Contact = () => {
+  const typing = new Audio(audio);
+  typing.loop = true;
+  // typing.autoplay = true;
+  useEffect(() => {
+    // typing.play();
+  }, []);
   return (
     <section id="contact" className="contact">
       <div className="container">
         <div className="section-title">
           <h2>Contact</h2>
-          <p>
-            je vous accompagne dans tous les aspects nécessaires pour la mise en
-            production de votre projet informatique englobant le volet
-            d'analyse, la création des maquettes visules, le codage et scripting
-            ainsi que le déploiment jusqu'à la maintennace, néhsitez à prendre
-            contact avec moi afin que nous puissons discuté les details.
-          </p>
+          <Slide right>
+            <TypeAnimation
+              sequence={[
+                `je vous accompagne dans tous les aspects nécessaires pour la mise en
+              production de votre projet informatique englobant le volet
+              d'analyse, la création des maquettes visules, le codage et scripting
+              ainsi que le déploiment jusqu'à la maintennace, néhsitez à prendre
+              contact avec moi afin que nous puissons discuté les details.`,
+                200,
+                () => {
+                  typing.pause();
+                  // alert('done')
+                },
+              ]}
+              wrapper="p"
+              speed={75}
+            />
+          </Slide>
         </div>
 
         <div className="row" data-aos="fade-in">
@@ -44,7 +64,6 @@ const Contact = () => {
                 <p>+212 6 49 81 41 09</p>
               </div>
               {/* <Gmap /> */}
-     
             </div>
           </div>
 

@@ -3,20 +3,17 @@ import { BiShowAlt } from "react-icons/bi";
 import projetsList from "../../assets/utils/data";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
+import Carousel from "better-react-carousel";
+import Badge from "react-bootstrap/Badge";
+import { BsCodeSlash, BsPlay } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
+import "../../styles/portfolio.scss";
+import { TypeAnimation } from "react-type-animation";
+import audio from "../../assets/utils/type-writing-6834.mp3";
+import { useEffect } from "react";
+import Slide from "react-reveal/Slide";
 const Projects = () => {
   const portfolio = projetsList;
-  // console.log(portfolio[0].galerie());
-  // const [protfollios] = useState(() => {
-  //   let arr = [];
-  //   for (let i = 0; i < 4; i++) {
-  //     arr[i] = require("../../assets/img/portfolio/1 (1).png");
-  //     //   console.log(i);
-  //   }
-  //   return arr;
-  // });
-
-  const [hoveredPortfollio, setHoveredPortfollio] = useState(-1);
   const [projectToShowIndex, setProjectToShowIndex] = useState(-1);
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
@@ -27,67 +24,58 @@ const Projects = () => {
     setProjectToShowIndex(projectIndex);
     setShowModal(true);
   };
-
+  const typing = new Audio(audio);
+  typing.loop = true;
+  // typing.autoplay = true;
+  useEffect(() => {
+    typing.play();
+  }, []);
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
         <div className="section-title">
           <h2>Portfolio</h2>
-          <p>
-            voici des echantillioons de projets vitrines developpes par mes
-            soins demontsrant les differents de mes competences.
-          </p>
+          <Slide right>
+            <TypeAnimation
+              sequence={[
+                `voici des echantillioons de projets vitrines developpes par mes
+              soins demontsrant les differents de mes competences.`,
+                ,
+                200,
+                () => {
+                  typing.pause();
+                  // alert('done')
+                },
+              ]}
+              wrapper="p"
+              speed={75}
+            />
+          </Slide>
         </div>
 
-        <div className="row" data-aos="fade-up">
-          <div className="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" className="filter-active">
-                All
-              </li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-CRM">CRM</li>
-              <li data-filter=".filter-mobile">E-Commerce</li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          className="row portfolio-container"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div className="row gx-2">
           {portfolio.map((project, key) => (
-            <div
-              key={`portfo-${key}`}
-              className="col-lg-4 col-md-6 portfolio-item filter-app"
-              onMouseMove={() => setHoveredPortfollio(key)}
-              onMouseLeave={() => setHoveredPortfollio(-1)}
-            >
-              <div className="portfolio-wrap">
-                <img src={project.img} className="img-fluid" alt="" />
-                <p
-                  style={{
-                    display: `${hoveredPortfollio == key ? "block" : "none"}`,
-                    textAlign: "center",
-                    position: "absolute",
-                    top: 15,
-                    color: "#1D8BBE",
-                    fontSize: "22px",
-                  }}
-                >
-                  {project.title}
-                </p>
-                <div className="portfolio-links">
-                  <a
-                    onClick={() => handleShowModal(key)}
-                    href="#"
-                    title="More Details"
-                  >
-                    <i>
-                      <BiShowAlt />
-                    </i>
-                  </a>
+            <div key={`portfo-${key}`} className="col-lg-3 col-md-6  ">
+              <div className="portfolio-item">
+                <div className="row">
+                  <div className="col-8 d-flex  align-items-center">
+                    <h5 className="text-center"> {project.name}</h5>
+                  </div>
+                  <div className="col-4">
+                    <a
+                      onClick={() => handleShowModal(key)}
+                      href="#"
+                      title="More Details"
+                      className="btn btn-info w-100"
+                    >
+                      <i>
+                        <BiShowAlt />
+                      </i>
+                    </a>
+                  </div>
+                </div>
+                <div className="portfolio-wrap">
+                  <img src={project.img} className="img-fluid" alt="" />
                 </div>
               </div>
             </div>
@@ -95,22 +83,105 @@ const Projects = () => {
         </div>
       </div>
       {showModal ? (
-        <Modal  size="lg" centered show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>{projetsList[projectToShowIndex].title}</Modal.Title>
+        <Modal
+          style={{ zIndex: 9999 }}
+          size="xl"
+          centered
+          show={showModal}
+          onHide={handleCloseModal}
+        >
+          <Modal.Header className="d-flex flex-column justify-content-center align-self-center text-center">
+            <Modal.Title className=" projectTitle text-center bold w-100 ">
+              {projetsList[projectToShowIndex].name}
+            </Modal.Title>
+            <p>{projetsList[projectToShowIndex].title}</p>
           </Modal.Header>
 
           <Modal.Body>
-            <p>{projetsList[projectToShowIndex].description}</p>
-            <ul>
-              {projetsList[projectToShowIndex].tags.map((tag) => (
-                <li>{tag}</li>
+            <div className="row">
+              <div className="col-md-8 col-sm-12">
+                <h6
+                  className="text-center"
+                  style={{ fontWeight: "bold", color: "#e0a800" }}
+                >
+                  Descritpion du projet :
+                </h6>
+                <p
+                  style={{
+                    backgroundColor: "#862A8E",
+                    borderRadius: "5px",
+                    color: "white",
+                    padding: "8px 30px",
+                    fontFamily: "serif",
+                    fontSize: "18px",
+                    lineHeight: "2em",
+                  }}
+                  dangerouslySetInnerHTML={{
+                    __html: projetsList[
+                      projectToShowIndex
+                    ].description.replaceAll("\n", "<li/>"),
+                  }}
+                >
+                  {/* {`${.replaceAll(
+                    "\n",
+                    "<br/>"
+                  )}`} */}
+                </p>
+              </div>
+              <div className="col-md-4 col-sm-12">
+                <h6
+                  className="text-center"
+                  style={{ fontWeight: "bold", color: "#e0a800" }}
+                >
+                  Technologies :
+                </h6>
+
+                <div className="">
+                  {projetsList[projectToShowIndex].tags.map((tag) => (
+                    <Badge
+                      bg="info"
+                      pill
+                      text="light"
+                      id="myBadge"
+                      className="p-2 m-1"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Carousel cols={3} rows={1} gap={10} loop showDots autoPlay>
+              {projetsList[projectToShowIndex].galerie().map((img, index) => (
+                <Carousel.Item key={index}>
+                  <img width="100%" src={img} />
+                </Carousel.Item>
               ))}
-            </ul>
+            </Carousel>
           </Modal.Body>
 
-          <Modal.Footer>
+          <Modal.Footer style={{ fontSize: "20px" }}>
+            <Button
+              variant="warning"
+              href={projetsList[projectToShowIndex].gitHub}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsCodeSlash className="mr-2 mb-1" />
+              Code
+            </Button>
+            <Button
+              style={{ backgroundColor: "#862A8E", border: "#862A8E" }}
+              href={projetsList[projectToShowIndex].link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsPlay className="mr-2 mb-1" />
+              Demo
+            </Button>
             <Button variant="secondary" onClick={handleCloseModal}>
+              <AiOutlineClose className="mr-2 mb-1" />
               Close
             </Button>
           </Modal.Footer>

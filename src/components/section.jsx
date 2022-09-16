@@ -1,4 +1,5 @@
 import React from "react";
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const Section = () => {
   return (
@@ -7,14 +8,16 @@ const Section = () => {
       className="d-flex flex-column justify-content-center align-items-center"
     >
       <div className="hero-container" data-aos="fade-in">
+      <LightSpeed right>
+
         <h1>Laraibi Mehdi</h1>
+        </LightSpeed>
+        <LightSpeed left>
+
         <p>
-          I'm
-          <span
-            className="typed"
-            data-typed-items="FullStack Developer, Freelancer "
-          ></span>
+          FullStack Developer, Freelancer
         </p>
+        </LightSpeed>
       </div>
     </section>
   );

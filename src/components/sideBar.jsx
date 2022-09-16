@@ -88,7 +88,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="https://blog.laraibi.tech" target="_blank">
+              <a href="https://blog.laraibi.tech" target="_blank" rel="noreferrer">
                 <i>
                   <FaBlog />
                 </i>

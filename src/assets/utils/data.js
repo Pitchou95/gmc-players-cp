@@ -26,6 +26,7 @@ const projetsList = [
     },
     link: "",
     img: require("../../assets/img/portfolio/1 (1).png"),
+    gitHub:""
   },
   {
     categorie: "FullStack Web Application",
@@ -46,6 +47,7 @@ const projetsList = [
     },
     link: "https://sms.laraibi.tech/",
     img: require("../../assets/img/portfolio/1 (2).png"),
+    gitHub:"https://github.com/Laraibi/SchoolManagementSystem"
   },
   {
     categorie: "Social Media",
@@ -72,15 +74,16 @@ const projetsList = [
     },
     link: "https://media.laraibi.tech",
     img: require("../../assets/img/portfolio/1 (3).png"),
+    gitHub:"https://github.com/Laraibi/Crud_SPA_Vue3_Laravel8"
   },
   {
-    categorie: "Social Media",
+    categorie: "CRM-DashBoard",
     customer: "Projet Personnel",
     id: "four",
     name: "Mobisiki",
     //   img: protfollios[0],
     title:
-      "Gestion de dossiers médicaux des patients et leurs médecins traitantsl",
+      "Gestion de dossiers médicaux des patients et leurs médecins traitants",
     description:
       "Suivi et gestion des dossiers médicaux des patients d'une clinique:\nConnexion et inscription des utilisateurs\nAjout de patients et docteurs de la clinique\nSuivi des alergies et maladies des patients avec leurs médecins traitants",
     tags: ["Php-Laravel", "MySql SGBD", "Bootstrap", "JavaScript(jQuery)"],
@@ -93,6 +96,7 @@ const projetsList = [
     },
     link: "https://mob.laraibi.tech",
     img: require("../../assets/img/portfolio/1 (4).png"),
+    gitHub:"https://github.com/Laraibi/Mobikisi"
   },
 ];
 
