@@ -11,12 +11,22 @@
 //     height: 4rem;
 // }
 
+.skillsContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-#skills .col-2{
+.skillsContainer .skill {
     margin: 10px;
     border-radius: 10%;
     // padding: 30px;
     border: 2px solid #65206B ;
     background-color: #65206B;
     box-shadow: 5px 5px 5px #220B24;
+    width: 5rem;
 }
+
+// .skillsContainer .skill img {
+//     filter: blur(1px);
+// }

@@ -17,7 +17,7 @@ import "../../styles/skillStyles.scss";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
-import Roll from 'react-reveal/Roll';
+import Roll from "react-reveal/Roll";
 
 const Skills = () => {
   const [icons] = useState(() => {
@@ -59,16 +59,12 @@ const Skills = () => {
             />
           </Slide>
         </div>
-        <div className="row">
+        <div className="skillsContainer">
           {icons.map((img, key) => (
-            
             <Roll left>
-              <div
-                className="col-2 mx-2  d-flex align-items-center justify-content-center"
-                key={key}
-              >
+              <div className="skill" key={key}>
                 <img
-                  className="img-skill img img-fluid w-75 h-75"
+                  className="img-skill img img-fluid w-100 h-100 p-3"
                   src={img}
                   alt=""
                 />

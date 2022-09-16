@@ -15,9 +15,9 @@ const About = () => {
   const age = Math.abs(year - 1970);
   const typing= new Audio(audio);
   typing.loop = true;
-  // typing.autoplay = true;
+  typing.autoplay = true;
   useEffect(() => {
-    // typing.play();
+    typing.play();
   }, []);
   return (
     <section id="about" className="about">

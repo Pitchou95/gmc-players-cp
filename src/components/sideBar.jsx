@@ -5,8 +5,11 @@ import {
   BsHouseDoor,
   BsPerson,
   BsFillFileCodeFill,
-  BsLayersHalf,BsEnvelopeOpen
+  BsLayersHalf,
+  BsEnvelopeOpen,
 } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 import { FaBlog } from "react-icons/fa";
 const Sidebar = () => {
   return (
@@ -88,7 +91,11 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <a href="https://blog.laraibi.tech" target="_blank" rel="noreferrer">
+              <a
+                href="https://blog.laraibi.tech"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i>
                   <FaBlog />
                 </i>
@@ -98,7 +105,7 @@ const Sidebar = () => {
             <li>
               <a href="#contact">
                 <i>
-                  <BsEnvelopeOpen/>
+                  <BsEnvelopeOpen />
                 </i>
                 <span>Contact</span>
               </a>
@@ -106,7 +113,9 @@ const Sidebar = () => {
           </ul>
         </nav>
         <button type="button" className="mobile-nav-toggle d-xl-none">
-          <i className="icofont-navigation-menu"></i>
+          <i>
+            <GiHamburgerMenu />
+          </i>
         </button>
       </div>
     </header>
