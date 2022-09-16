@@ -12,6 +12,9 @@ import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
+import Flip from "react-reveal/Flip";
+import Zoom from "react-reveal/Zoom";
+
 const Projects = () => {
   const portfolio = projetsList;
   const [projectToShowIndex, setProjectToShowIndex] = useState(-1);
@@ -54,32 +57,36 @@ const Projects = () => {
         </div>
 
         <div className="row gx-2">
-          {portfolio.map((project, key) => (
-            <div key={`portfo-${key}`} className="col-lg-3 col-md-6  ">
-              <div className="portfolio-item">
-                <div className="row">
-                  <div className="col-8 d-flex  align-items-center">
-                    <h5 className="text-center"> {project.name}</h5>
+          <Flip left cascade>
+            {portfolio.map((project, key) => (
+              <div key={`portfo-${key}`} className="col-lg-3 col-md-6  ">
+                <div className="portfolio-item">
+                  <div className="row">
+                    <div className="col-8 d-flex  align-items-center">
+                      <h5 className="text-center"> {project.name}</h5>
+                    </div>
+                    <div className="col-4">
+                      <Zoom bottom >
+                        <a
+                          onClick={() => handleShowModal(key)}
+                          href="#"
+                          title="More Details"
+                          className="btn btn-info w-100"
+                        >
+                          <i>
+                            <BiShowAlt />
+                          </i>
+                        </a>
+                      </Zoom>
+                    </div>
                   </div>
-                  <div className="col-4">
-                    <a
-                      onClick={() => handleShowModal(key)}
-                      href="#"
-                      title="More Details"
-                      className="btn btn-info w-100"
-                    >
-                      <i>
-                        <BiShowAlt />
-                      </i>
-                    </a>
+                  <div className="portfolio-wrap">
+                    <img src={project.img} className="img-fluid" alt="" />
                   </div>
-                </div>
-                <div className="portfolio-wrap">
-                  <img src={project.img} className="img-fluid" alt="" />
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </Flip>
         </div>
       </div>
       {showModal ? (

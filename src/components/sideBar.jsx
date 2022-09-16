@@ -112,7 +112,7 @@ const Sidebar = () => {
             </li>
           </ul>
         </nav>
-        <button type="button" className="mobile-nav-toggle d-xl-none">
+        <button type="button" className="mobile-nav-toggle d-xl-none" onClick={()=>document.body.classList.toggle('mobile-nav-active')}>
           <i>
             <GiHamburgerMenu />
           </i>
