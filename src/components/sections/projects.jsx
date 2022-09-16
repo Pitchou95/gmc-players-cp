@@ -27,12 +27,12 @@ const Projects = () => {
     setProjectToShowIndex(projectIndex);
     setShowModal(true);
   };
-  const typing = new Audio(audio);
-  typing.loop = true;
-  // typing.autoplay = true;
-  useEffect(() => {
-    typing.play();
-  }, []);
+  // const typing = new Audio(audio);
+  // typing.loop = true;
+  // // typing.autoplay = true;
+  // useEffect(() => {
+  //   typing.play();
+  // }, []);
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
@@ -45,10 +45,6 @@ const Projects = () => {
               soins demontsrant les differents de mes competences.`,
                 ,
                 200,
-                () => {
-                  typing.pause();
-                  // alert('done')
-                },
               ]}
               wrapper="p"
               speed={75}
@@ -80,8 +76,8 @@ const Projects = () => {
                       </Zoom>
                     </div>
                   </div>
-                  <div className="portfolio-wrap">
-                    <img src={project.img} className="img-fluid" alt="" />
+                  <div className="portfolio-wrap text-center">
+                    <img src={project.img} className="img-fluid w-75" alt="" />
                   </div>
                 </div>
               </div>
@@ -117,10 +113,12 @@ const Projects = () => {
                   style={{
                     backgroundColor: "#862A8E",
                     borderRadius: "5px",
+  boxShadow: "2px 2px 2px 2px #e0a800",
+
                     color: "white",
                     padding: "8px 30px",
-                    fontFamily: "serif",
-                    fontSize: "18px",
+                    fontFamily: "Courier New, Courier, monospace",
+                    fontSize: "14px",
                     lineHeight: "2em",
                   }}
                   dangerouslySetInnerHTML={{
@@ -144,13 +142,14 @@ const Projects = () => {
                 </h6>
 
                 <div className="">
-                  {projetsList[projectToShowIndex].tags.map((tag) => (
+                  {projetsList[projectToShowIndex].tags.map((tag,key) => (
                     <Badge
                       bg="info"
                       pill
                       text="light"
                       id="myBadge"
                       className="p-2 m-1"
+                      key={key}
                     >
                       {tag}
                     </Badge>

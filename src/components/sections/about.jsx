@@ -15,12 +15,12 @@ const About = () => {
   const age_dt = new Date(month_diff);
   const year = age_dt.getUTCFullYear();
   const age = Math.abs(year - 1970);
-  const typing = new Audio(audio);
-  typing.loop = true;
-  typing.autoplay = true;
-  useEffect(() => {
-    typing.play();
-  }, []);
+  // const typing = new Audio(audio);
+  // typing.loop = true;
+  // typing.autoplay = true;
+  // useEffect(() => {
+  //   // typing.play();
+  // }, []);
   return (
     <section id="about" className="about">
       <div className="container">
@@ -35,10 +35,6 @@ const About = () => {
               univers et à la participation à son développement.`,
                 ,
                 200,
-                () => {
-                  typing.pause();
-                  // alert('done')
-                },
               ]}
               wrapper="p"
               speed={75}
@@ -46,16 +42,16 @@ const About = () => {
           </Slide>
         </div>
 
-        <div className="row">
+        <div className="row d-flex  flex-lg-row flex-md-column-reverse">
           <div
-            className="col-lg-8 pt-4 pt-lg-0 content d-flex justify-content-center flex-column"
+            className="col-lg-8 pt-4 pt-lg-0 content d-flex justify-content-center flex-column "
             data-aos="fade-left"
           >
-            <h3>UI/UX Designer &amp; Web Developer.</h3>
-            <div className="row">
-              <div className="col-lg-6">
+            <h3 className="">UI/UX Designer &amp; Web Developer.</h3>
+            <div className="row ">
+              <div className="col-lg-6 d-flex justify-content-center">
                 <Fade right big cascade>
-                  <ul>
+                  <ul className="w-100">
                     <li>
                       <i>
                         <BsChevronRight />
@@ -87,9 +83,9 @@ const About = () => {
                   </ul>
                 </Fade>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-6 d-flex justify-content-center">
                 <Fade right big cascade>
-                  <ul>
+                  <ul className="w-100">
                     <li>
                       <i>
                         <BsChevronRight />
@@ -120,7 +116,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4" data-aos="fade-right">
+          <div className="col-lg-4 d-flex justify-content-center" data-aos="fade-right">
             <Flip right>
               <img
                 src={profileImg}

@@ -6,12 +6,12 @@ import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 
 const Resume = () => {
-  const typing = new Audio(audio);
-  typing.loop = true;
-  // typing.autoplay = true;
-  useEffect(() => {
-    // typing.play();
-  }, []);
+  // const typing = new Audio(audio);
+  // typing.loop = true;
+  // // typing.autoplay = true;
+  // useEffect(() => {
+  //   // typing.play();
+  // }, []);
   return (
     <section id="resume" className="resume">
       <div className="container">
@@ -25,10 +25,6 @@ const Resume = () => {
               jusqu'a son deploiement finale.`,
                 ,
                 200,
-                () => {
-                  typing.pause();
-                  // alert('done')
-                },
               ]}
               wrapper="p"
               speed={75}

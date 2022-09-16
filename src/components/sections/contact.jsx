@@ -6,12 +6,12 @@ import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
 const Contact = () => {
-  const typing = new Audio(audio);
-  typing.loop = true;
-  // typing.autoplay = true;
-  useEffect(() => {
-    // typing.play();
-  }, []);
+  // const typing = new Audio(audio);
+  // typing.loop = true;
+  // // typing.autoplay = true;
+  // useEffect(() => {
+  //   // typing.play();
+  // }, []);
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -25,11 +25,7 @@ const Contact = () => {
               d'analyse, la création des maquettes visules, le codage et scripting
               ainsi que le déploiment jusqu'à la maintennace, néhsitez à prendre
               contact avec moi afin que nous puissons discuté les details.`,
-                200,
-                () => {
-                  typing.pause();
-                  // alert('done')
-                },
+                200
               ]}
               wrapper="p"
               speed={75}

@@ -22,7 +22,7 @@ import Roll from "react-reveal/Roll";
 const Skills = () => {
   const [icons] = useState(() => {
     let arr = [];
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 10; i++) {
       arr[i] = require("../../assets/img/skills-icons/1 (" +
         parseInt(i + 1) +
         ").png");
@@ -30,12 +30,12 @@ const Skills = () => {
     }
     return arr;
   });
-  const typing = new Audio(audio);
-  typing.loop = true;
-  // typing.autoplay = true;
-  useEffect(() => {
-    // typing.play();
-  }, []);
+  // const typing = new Audio(audio);
+  // typing.loop = true;
+  // // typing.autoplay = true;
+  // useEffect(() => {
+  //   // typing.play();
+  // }, []);
   return (
     <section id="skills" className="skills section-bg">
       <div className="container">
@@ -49,10 +49,6 @@ const Skills = () => {
               autodidacte constamment pur suivre le flux .`,
                 ,
                 200,
-                () => {
-                  typing.pause();
-                  // alert('done')
-                },
               ]}
               wrapper="p"
               speed={75}
@@ -61,8 +57,8 @@ const Skills = () => {
         </div>
         <div className="skillsContainer">
           {icons.map((img, key) => (
-            <Roll left>
-              <div className="skill" key={key}>
+            <Roll left key={key}>
+              <div className="skill" >
                 <img
                   className="img-skill img img-fluid w-100 h-100 p-3"
                   src={img}

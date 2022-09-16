@@ -250,8 +250,9 @@ h6 {
   height: 80vh;
   background: url("../assets/img/—Pngtree—2.5d\ office\ business\ computer\ mobile_4203115.png")
     top center;
-  background-size: cover;
-  background-position: -60px -120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  // background-position: -60px -120px;
 }
 
 // #hero:before {
