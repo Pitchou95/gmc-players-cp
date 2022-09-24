@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsFillEnvelopeFill, BsFillTelephoneFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
+import { supabase } from "../../supabaseClient";
+
 const Contact = () => {
-  // const typing = new Audio(audio);
-  // typing.loop = true;
-  // // typing.autoplay = true;
-  // useEffect(() => {
-  //   // typing.play();
-  // }, []);
+  const [payLoad, setPayLoad] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [contactName, setCN] = useState(null);
+  const updateState = (key, value) => {
+    setPayLoad({ ...payLoad, [key]: value });
+  };
+  const insert = async () => {
+    const { data, error } = await supabase
+      .from("contacts")
+      .insert([payLoad])
+      // .then(() =>);
+    console.log(data);
+    console.log(error);
+    setCN(data[0].name)
+  };
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    console.log("submitted form");
+    console.log(payLoad);
+    insert();
+  };
+  console.log(supabase);
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -25,7 +48,7 @@ const Contact = () => {
               d'analyse, la création des maquettes visules, le codage et scripting
               ainsi que le déploiment jusqu'à la maintennace, néhsitez à prendre
               contact avec moi afin que nous puissons discuté les details.`,
-                200
+                200,
               ]}
               wrapper="p"
               speed={75}
@@ -64,73 +87,91 @@ const Contact = () => {
           </div>
 
           <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form
-              action="backend/index.php"
-              method="post"
-              className="php-email-form"
-            >
-              <div className="form-row">
-                <div className="form-group col-md-6">
-                  <label htmlFor="name">Your Name</label>
+            {contactName ? (
+              <div className="sent-message">
+                Your message has been sent. Thank you {contactName}!
+              </div>
+            ) : (
+              <form
+                action="backend/index.php"
+                method="post"
+                className="php-email-form"
+              >
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="name">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      id="name"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 4 chars"
+                      onChange={(e) => updateState("name", e.target.value)}
+                      value={payLoad.name}
+                    />
+                    <div className="validate"></div>
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="name">Your Email</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      name="email"
+                      id="email"
+                      data-rule="email"
+                      data-msg="Please enter a valid email"
+                      onChange={(e) => updateState("email", e.target.value)}
+                      value={payLoad.email}
+                    />
+                    <div className="validate"></div>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="name">Subject</label>
                   <input
                     type="text"
-                    name="name"
                     className="form-control"
-                    id="name"
+                    name="subject"
+                    id="subject"
                     data-rule="minlen:4"
-                    data-msg="Please enter at least 4 chars"
+                    data-msg="Please enter at least 8 chars of subject"
+                    onChange={(e) => updateState("subject", e.target.value)}
+                    value={payLoad.subject}
                   />
                   <div className="validate"></div>
                 </div>
-                <div className="form-group col-md-6">
-                  <label htmlFor="name">Your Email</label>
-                  <input
-                    type="email"
+                <div className="form-group">
+                  <label htmlFor="name">Message</label>
+                  <textarea
                     className="form-control"
-                    name="email"
-                    id="email"
-                    data-rule="email"
-                    data-msg="Please enter a valid email"
-                  />
+                    name="message"
+                    rows="10"
+                    data-rule="required"
+                    data-msg="Please write something for us"
+                    onChange={(e) => updateState("message", e.target.value)}
+                    value={payLoad.message}
+                  ></textarea>
                   <div className="validate"></div>
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="name">Subject</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="subject"
-                  id="subject"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 8 chars of subject"
-                />
-                <div className="validate"></div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="name">Message</label>
-                <textarea
-                  className="form-control"
-                  name="message"
-                  rows="10"
-                  data-rule="required"
-                  data-msg="Please write something for us"
-                ></textarea>
-                <div className="validate"></div>
-              </div>
-              <div className="mb-3">
-                <div className="loading">Loading</div>
-                <div className="error-message"></div>
-                <div className="sent-message">
-                  Your message has been sent. Thank you!
+                <div className="mb-3">
+                  <div className="loading">Loading</div>
+                  <div className="error-message"></div>
+                  <div className="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
                 </div>
-              </div>
-              <div className="text-center">
-                <button id="btnSendContact" type="submit">
-                  Send Message
-                </button>
-              </div>
-            </form>
+                <div className="text-center">
+                  <button
+                    id="btnSendContact"
+                    type="submit"
+                    onClick={handleContact}
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>
