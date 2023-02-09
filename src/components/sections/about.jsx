@@ -5,9 +5,9 @@ import "../../styles/about.scss";
 import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
-import Slide from "react-reveal/Slide";
-import Fade from "react-reveal/Fade";
-import Flip from "react-reveal/Flip";
+import {Slide} from "react-awesome-reveal";
+import {Fade} from "react-awesome-reveal";
+import {Flip} from "react-awesome-reveal";
 
 const About = () => {
   const dob = new Date("08/10/1992");

@@ -1,5 +1,6 @@
 import React from "react";
-import LightSpeed from 'react-reveal/LightSpeed';
+import {Hinge} from "react-awesome-reveal";
+import {Flip} from "react-awesome-reveal";
 
 const Section = () => {
   return (
@@ -8,16 +9,12 @@ const Section = () => {
       className="d-flex flex-column justify-content-center align-items-center"
     >
       <div className="hero-container" data-aos="fade-in">
-      <LightSpeed right>
-
-        <h1>Laraibi Mehdi</h1>
-        </LightSpeed>
-        <LightSpeed left>
-
-        <p>
-          FullStack Developer, Freelancer
-        </p>
-        </LightSpeed>
+        <Flip right>
+          <h1>Laraibi Mehdi</h1>
+        </Flip>
+        <Flip left>
+          <p>FullStack Developer, Freelancer</p>
+        </Flip>
       </div>
     </section>
   );

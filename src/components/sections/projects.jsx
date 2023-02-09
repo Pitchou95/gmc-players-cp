@@ -11,9 +11,9 @@ import "../../styles/portfolio.scss";
 import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
-import Slide from "react-reveal/Slide";
-import Flip from "react-reveal/Flip";
-import Zoom from "react-reveal/Zoom";
+import { Slide } from "react-awesome-reveal";
+import { Flip } from "react-awesome-reveal";
+import { Zoom } from "react-awesome-reveal";
 
 const Projects = () => {
   const portfolio = projetsList;
@@ -52,17 +52,17 @@ const Projects = () => {
           </Slide>
         </div>
 
-        <div className="row gx-2">
-          <Flip left cascade>
-            {portfolio.map((project, key) => (
-              <div key={`portfo-${key}`} className="col-lg-3 col-md-6  ">
-                <div className="portfolio-item">
+        <div className="d-flex flex-row justify-content-around align-items-center">
+          {portfolio.map((project, key) => (
+            <Flip left cascade>
+              <div key={`portfo-${key}`} className="h-100  ">
+                <div className="portfolio-item ">
                   <div className="row">
                     <div className="col-8 d-flex  align-items-center">
                       <h5 className="text-center"> {project.name}</h5>
                     </div>
                     <div className="col-4">
-                      <Zoom bottom >
+                      <Zoom bottom>
                         <a
                           onClick={() => handleShowModal(key)}
                           href="#"
@@ -81,8 +81,8 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            ))}
-          </Flip>
+            </Flip>
+          ))}
         </div>
       </div>
       {showModal ? (
@@ -113,7 +113,7 @@ const Projects = () => {
                   style={{
                     backgroundColor: "#862A8E",
                     borderRadius: "5px",
-  boxShadow: "2px 2px 2px 2px #e0a800",
+                    boxShadow: "2px 2px 2px 2px #e0a800",
 
                     color: "white",
                     padding: "8px 30px",
@@ -142,7 +142,7 @@ const Projects = () => {
                 </h6>
 
                 <div className="">
-                  {projetsList[projectToShowIndex].tags.map((tag,key) => (
+                  {projetsList[projectToShowIndex].tags.map((tag, key) => (
                     <Badge
                       bg="info"
                       pill

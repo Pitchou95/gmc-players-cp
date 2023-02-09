@@ -4,8 +4,8 @@ import { GoLocation } from "react-icons/go";
 import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
-import Slide from "react-reveal/Slide";
-import { supabase } from "../../supabaseClient";
+import {Slide} from "react-awesome-reveal";
+// import { supabase } from "../../supabaseClient";
 
 const Contact = () => {
   const [payLoad, setPayLoad] = useState({
@@ -19,13 +19,13 @@ const Contact = () => {
     setPayLoad({ ...payLoad, [key]: value });
   };
   const insert = async () => {
-    const { data, error } = await supabase
-      .from("contacts")
-      .insert([payLoad])
+    // const { data, error } = await supabase
+    //   .from("contacts")
+    //   .insert([payLoad])
       // .then(() =>);
-    console.log(data);
-    console.log(error);
-    setCN(data[0].name)
+    // console.log(data);
+    // console.log(error);
+    // setCN(data[0].name)
   };
 
   const handleContact = (e) => {
@@ -34,7 +34,7 @@ const Contact = () => {
     console.log(payLoad);
     insert();
   };
-  console.log(supabase);
+  // console.log(supabase);
   return (
     <section id="contact" className="contact">
       <div className="container">
