@@ -1,38 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BsFillEnvelopeFill, BsFillTelephoneFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
-import {Slide} from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 // import { supabase } from "../../supabaseClient";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [payLoad, setPayLoad] = useState({
     name: "",
-    email: "",
-    subject: "",
-    message: "",
   });
   const [contactName, setCN] = useState(null);
   const updateState = (key, value) => {
     setPayLoad({ ...payLoad, [key]: value });
   };
-  const insert = async () => {
-    // const { data, error } = await supabase
-    //   .from("contacts")
-    //   .insert([payLoad])
-      // .then(() =>);
-    // console.log(data);
-    // console.log(error);
-    // setCN(data[0].name)
-  };
+  const form = useRef();
 
-  const handleContact = (e) => {
+  // const handleContact = (e) => {
+  //   e.preventDefault();
+  //   console.log("submitted form");
+  //   console.log(payLoad);
+  // };
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log("submitted form");
-    console.log(payLoad);
-    insert();
+
+    emailjs
+      .sendForm(
+        "service_y8ba9tj",
+        "template_sk639eb",
+        form.current,
+        "9EcIpSFbadre2h0PL"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setCN(payLoad.name);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
   // console.log(supabase);
   return (
@@ -93,16 +103,18 @@ const Contact = () => {
               </div>
             ) : (
               <form
-                action="backend/index.php"
-                method="post"
+                // action="backend/index.php"
+                // method="post"
                 className="php-email-form"
+                ref={form}
+                onSubmit={sendEmail}
               >
                 <div className="form-row">
                   <div className="form-group col-md-6">
                     <label htmlFor="name">Your Name</label>
                     <input
                       type="text"
-                      name="name"
+                      name="from_name"
                       className="form-control"
                       id="name"
                       data-rule="minlen:4"
@@ -117,12 +129,12 @@ const Contact = () => {
                     <input
                       type="email"
                       className="form-control"
-                      name="email"
+                      name="from_email"
                       id="email"
                       data-rule="email"
                       data-msg="Please enter a valid email"
                       onChange={(e) => updateState("email", e.target.value)}
-                      value={payLoad.email}
+                      // value={payLoad.email}
                     />
                     <div className="validate"></div>
                   </div>
@@ -136,8 +148,8 @@ const Contact = () => {
                     id="subject"
                     data-rule="minlen:4"
                     data-msg="Please enter at least 8 chars of subject"
-                    onChange={(e) => updateState("subject", e.target.value)}
-                    value={payLoad.subject}
+                    // onChange={(e) => updateState("subject", e.target.value)}
+                    // value={payLoad.subject}
                   />
                   <div className="validate"></div>
                 </div>
@@ -149,23 +161,17 @@ const Contact = () => {
                     rows="10"
                     data-rule="required"
                     data-msg="Please write something for us"
-                    onChange={(e) => updateState("message", e.target.value)}
-                    value={payLoad.message}
+                    // onChange={(e) => updateState("message", e.target.value)}
+                    // value={payLoad.message}
                   ></textarea>
                   <div className="validate"></div>
                 </div>
-                <div className="mb-3">
-                  <div className="loading">Loading</div>
-                  <div className="error-message"></div>
-                  <div className="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
-                </div>
+
                 <div className="text-center">
                   <button
                     id="btnSendContact"
                     type="submit"
-                    onClick={handleContact}
+                    // onClick={handleContact}
                   >
                     Send Message
                   </button>

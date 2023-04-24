@@ -8,9 +8,7 @@ import Badge from "react-bootstrap/Badge";
 import { BsCodeSlash, BsPlay } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import "../../styles/portfolio.scss";
-import { TypeAnimation } from "react-type-animation";
-import audio from "../../assets/utils/type-writing-6834.mp3";
-import { useEffect } from "react";
+
 import { Slide } from "react-awesome-reveal";
 import { Flip } from "react-awesome-reveal";
 import { Zoom } from "react-awesome-reveal";
@@ -27,61 +25,48 @@ const Projects = () => {
     setProjectToShowIndex(projectIndex);
     setShowModal(true);
   };
-  // const typing = new Audio(audio);
-  // typing.loop = true;
-  // // typing.autoplay = true;
-  // useEffect(() => {
-  //   typing.play();
-  // }, []);
+
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
         <div className="section-title">
           <h2>Portfolio</h2>
           <Slide right>
-            <TypeAnimation
-              sequence={[
-                `voici des echantillioons de projets vitrines developpes par mes
-              soins demontsrant les differents de mes competences.`,
-                ,
-                200,
-              ]}
-              wrapper="p"
-              speed={75}
-            />
+            <p>
+              voici des echantillioons de projets vitrines developpes par mes
+              soins demontsrant les differents de mes competences.
+            </p>
           </Slide>
         </div>
 
-        <div className="d-flex flex-row justify-content-around align-items-center">
+        <div className="row d-flex flex-row justify-content-around align-items-center">
           {portfolio.map((project, key) => (
-            <Flip left cascade>
-              <div key={`portfo-${key}`} className="h-100  ">
-                <div className="portfolio-item ">
-                  <div className="row">
-                    <div className="col-8 d-flex  align-items-center">
-                      <h5 className="text-center"> {project.name}</h5>
-                    </div>
-                    <div className="col-4">
-                      <Zoom bottom>
-                        <a
-                          onClick={() => handleShowModal(key)}
-                          href="#"
-                          title="More Details"
-                          className="btn btn-info w-100"
-                        >
-                          <i>
-                            <BiShowAlt />
-                          </i>
-                        </a>
-                      </Zoom>
-                    </div>
+            <div key={`portfo-${key}`} className="col-lg-4 col-md-6 mt-5">
+              <div className="portfolio-item ">
+                <div className="row">
+                  <div className="col-8 d-flex  align-items-center">
+                    <h5 className="text-center"> {project.name}</h5>
                   </div>
-                  <div className="portfolio-wrap text-center">
-                    <img src={project.img} className="img-fluid w-75" alt="" />
+                  <div className="col-4">
+                    <Zoom bottom>
+                      <a
+                        onClick={() => handleShowModal(key)}
+                        href="#"
+                        title="More Details"
+                        className="btn btn-info w-100"
+                      >
+                        <i>
+                          <BiShowAlt />
+                        </i>
+                      </a>
+                    </Zoom>
                   </div>
                 </div>
+                <div className="portfolio-wrap text-center">
+                  <img src={project.img} className="img-fluid" alt="" />
+                </div>
               </div>
-            </Flip>
+            </div>
           ))}
         </div>
       </div>

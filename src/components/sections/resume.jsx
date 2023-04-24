@@ -2,8 +2,8 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import audio from "../../assets/utils/type-writing-6834.mp3";
 import { useEffect } from "react";
-import {Slide} from "react-awesome-reveal";
-import {Fade} from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const Resume = () => {
   // const typing = new Audio(audio);
@@ -18,17 +18,11 @@ const Resume = () => {
         <div className="section-title">
           <h2>Resume</h2>
           <Slide right>
-            <TypeAnimation
-              sequence={[
-                `Developpeur full stack, je participe aux differents aspects du
+            <p>
+              Developpeur full stack, je participe aux differents aspects du
               developpement de votre projet, depuis son analyse, conception
-              jusqu'a son deploiement finale.`,
-                ,
-                200,
-              ]}
-              wrapper="p"
-              speed={75}
-            />
+              jusqu'a son deploiement finale.
+            </p>
           </Slide>
         </div>
 
