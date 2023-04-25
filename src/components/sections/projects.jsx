@@ -10,7 +10,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import "../../styles/portfolio.scss";
 
 import { Slide } from "react-awesome-reveal";
-import { Flip } from "react-awesome-reveal";
 import { Zoom } from "react-awesome-reveal";
 
 const Projects = () => {

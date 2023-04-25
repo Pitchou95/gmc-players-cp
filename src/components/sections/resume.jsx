@@ -1,7 +1,4 @@
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import audio from "../../assets/utils/type-writing-6834.mp3";
-import { useEffect } from "react";
 import { Slide } from "react-awesome-reveal";
 import { Fade } from "react-awesome-reveal";
 

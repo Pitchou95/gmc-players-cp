@@ -1,9 +1,6 @@
 import React, { useState, useRef } from "react";
 import { BsFillEnvelopeFill, BsFillTelephoneFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-import { TypeAnimation } from "react-type-animation";
-import audio from "../../assets/utils/type-writing-6834.mp3";
-import { useEffect } from "react";
 import { Slide } from "react-awesome-reveal";
 // import { supabase } from "../../supabaseClient";
 import emailjs from "@emailjs/browser";
@@ -173,6 +170,7 @@ const Contact = () => {
                   >
                     Send Message
                   </button>
+              
                 </div>
               </form>
             )}
