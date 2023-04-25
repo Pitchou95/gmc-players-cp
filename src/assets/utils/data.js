@@ -1,5 +1,49 @@
 const projetsList = [
   {
+    categorie: "ERP-DashBoard",
+    customer: "Personal SAAS",
+    id: "five",
+    name: "lara-ERP",
+    //   img: protfollios[0],
+    title:
+      "ERP adapté aux petites et moyens entreprises de gérer leurs ventes plus efficacement",
+    description:
+      "Solution ERP personnalisée pour les petites entreprises afin de gérer efficacement leurs ventes. Créez facilement votre boutique en ligne, ajoutez vos marques, vos fournisseurs et gérez tous vos systèmes de vente. Ajoutez des clients et générez des devis et des factures pour toutes vos ventes. Entièrement personnalisable pour répondre à vos besoins spécifiques et disponible en tant que solution SAAS accessible depuis n'importe quel appareil disposant d'une connexion internet. Contactez-nous pour discuter de vos besoins et améliorer votre activité dès aujourd'hui.",
+    tags: ["Php-Laravel", "MySql SGBD", "Bootstrap", "JavaScript(React-JS)"],
+    galerie: () => {
+      let arr = [];
+      for (let i = 1; i < 7; i++) {
+        arr[i] = require(`../../assets/img/portfolio/laraErp/${i}.png`);
+      }
+      return arr;
+    },
+    link: "https://erp.laraibi.net",
+    img: require("../../assets/img/portfolio/1 (5).png"),
+    gitHub:"https://github.com/Laraibi/"
+  },
+  {
+    categorie: "Mobile App & AdminPanel",
+    customer: "Sbs-Group",
+    id: "sixe",
+    name: "Dwyt Be",
+    //   img: protfollios[0],
+    title:
+      "Dwyt BE: l'application mobile de prospection de SBS-Group.",
+    description:
+      "Une application mobile React Native conçue pour aider les prospecteurs de SBS-Group dans leur travail. L'application est liée à un panneau d'administration construit avec Laravel via une API REST, permettant une gestion efficace des prospects, la planification des rendez-vous et le suivi en temps réel de la progression des ventes. Profitez d'une intégration transparente entre l'application et le panneau d'administration, avec une interface conviviale qui permet une gestion et une analyse efficaces des données.",
+    tags: ["Php-Laravel", "MySql SGBD", "Bootstrap", "JavaScript(React DOM & React-Native)",],
+    galerie: () => {
+      let arr = [];
+      for (let i = 1; i < 7; i++) {
+        arr[i] = require(`../../assets/img/portfolio/dwytBE/${i}.png`);
+      }
+      return arr;
+    },
+    link: "https://laraibi.tech",
+    img: require("../../assets/img/portfolio/1 (6).png"),
+    gitHub:"https://github.com/Laraibi/"
+  },
+  {
     categorie: "FullStack Web Application",
     customer: "Intelcia Groupe",
     id: "one",
@@ -98,6 +142,7 @@ const projetsList = [
     img: require("../../assets/img/portfolio/1 (4).png"),
     gitHub:"https://github.com/Laraibi/Mobikisi"
   },
+ 
 ];
 
 export default projetsList;

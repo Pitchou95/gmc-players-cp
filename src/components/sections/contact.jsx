@@ -51,18 +51,16 @@ const Contact = () => {
         <div className="section-title">
           <h2>Contact</h2>
           <Slide right>
-            <TypeAnimation
-              sequence={[
-                `je vous accompagne dans tous les aspects nécessaires pour la mise en
-              production de votre projet informatique englobant le volet
-              d'analyse, la création des maquettes visules, le codage et scripting
-              ainsi que le déploiment jusqu'à la maintennace, néhsitez à prendre
-              contact avec moi afin que nous puissons discuté les details.`,
-                200,
-              ]}
-              wrapper="p"
-              speed={75}
-            />
+            <p>
+              Si vous cherchez un partenaire pour la mise en production de votre
+              projet informatique, je suis là pour vous aider. En tant que
+              développeur web fullstack, je peux vous accompagner à chaque étape
+              du processus, de l'analyse initiale à la maintenance continue. Que
+              vous ayez besoin de créer des maquettes visuelles, de coder et de
+              scripter votre site web, ou de déployer votre projet, je suis là
+              pour vous aider. N'hésitez pas à me contacter pour discuter de vos
+              besoins et de la façon dont je peux vous aider à les réaliser.
+            </p>
           </Slide>
         </div>
 

@@ -7,7 +7,7 @@ import { Roll } from "react-awesome-reveal";
 const Skills = () => {
   const [icons] = useState(() => {
     let arr = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       arr[i] = require("../../assets/img/skills-icons/1 (" +
         parseInt(i + 1) +
         ").png");
@@ -22,9 +22,18 @@ const Skills = () => {
           <h2>Skills</h2>
           <Slide right>
             <p>
-              le Dommaine de la technologie evolue chaque jour, ce qui me pousse
-              comme tous les intervennant du dommaine a rester proactif et etre
-              autodidacte constamment pur suivre le flux .
+              En tant que développeur web fullstack, je suis constamment en
+              train d'apprendre de nouvelles compétences pour suivre les
+              dernières avancées du secteur. Mon expertise couvre une variété de
+              technologies, notamment les langages de programmation front-end
+              tels que HTML, CSS et JavaScript, ainsi que des frameworks tels
+              que Vue.js et React.js. Pour le développement back-end, j'ai de
+              l'expérience avec des langages de programmation tels que PHP et
+              Node.js, ainsi que des frameworks tels que Laravel et Express. En
+              plus de cela, je suis également compétent dans l'utilisation de
+              bases de données telles que MySQL et MongoDB. Si vous avez des
+              questions sur mes compétences ou si vous souhaitez en savoir plus
+              sur mon expérience, n'hésitez pas à me contacter.
             </p>
           </Slide>
         </div>

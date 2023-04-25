@@ -33,8 +33,15 @@ const Projects = () => {
           <h2>Portfolio</h2>
           <Slide right>
             <p>
-              voici des echantillioons de projets vitrines developpes par mes
-              soins demontsrant les differents de mes competences.
+              Vous trouverez ci-dessous quelques exemples de mes réalisations
+              les plus récentes, qui illustrent mes compétences en matière de
+              développement frontend et backend. J'ai travaillé sur des projets
+              variés, allant des sites e-commerce aux applications web
+              complexes, en passant par les sites de contenu statique et
+              dynamique sans oublier l'univers du mobile avec les techologies
+              Hybride. Je suis constamment à la recherche de nouvelles
+              technologies et de nouvelles techniques pour améliorer mon
+              travail.
             </p>
           </Slide>
         </div>
