@@ -6,7 +6,7 @@ import {
   BsPerson,
   BsFillFileCodeFill,
   BsLayersHalf,
-  BsEnvelopeOpen,
+  BsEnvelopeOpen,BsDownload
 } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -108,6 +108,14 @@ const Sidebar = () => {
                   <BsEnvelopeOpen />
                 </i>
                 <span>Contact</span>
+              </a>
+            </li>
+            <li>
+              <a href="./cv_laraibi_23.pdf" download>
+                <i>
+                  <BsDownload />
+                </i>
+                <span>PDF Version</span>
               </a>
             </li>
           </ul>
