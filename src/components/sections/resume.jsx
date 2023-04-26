@@ -41,11 +41,11 @@ const Resume = () => {
                     Settat, Maroc
                   </em>
                 </p>
-                <p>
+                {/* <p>
                   Etudes approfondies sur les techniques de développement
                   informatique & administration de bases de données à
                   l’université.
-                </p>
+                </p> */}
               </div>
             </Fade>
             <Fade bottom>
@@ -59,11 +59,11 @@ const Resume = () => {
                     </a>
                   </em>
                 </p>
-                <p>
+                {/* <p>
                   <em>Mention assez bien</em> Initiation aux fondation du
                   dommaine de developpement et creation des applications ,
                   algorithmes, methodes d'analyse, infrastructures ...
-                </p>
+                </p> */}
               </div>
             </Fade>
           </div>
@@ -72,43 +72,39 @@ const Resume = () => {
             <Fade bottom>
               <div className="resume-item">
                 <h4>WFM Manager / Developpeur FullStack</h4>
-                <h5>2015 - Present</h5>
+                <h5>2015 - 2022</h5>
                 <p>
                   <em>Group Intelcia, Casablanca, Maroc </em>
                 </p>
-                <ul>
-                  <li>
-                    Mise en place d'un system de gestion de la chaine des
-                    donnees du departement planification et prevision permettant
-                    la strturaction des donnes, l'automotatisation de
-                    l'alimentation des des donnes ainsi que leurs presentation a
-                    travers un CRM base sur Laravel/Mysql.
-                  </li>
-                  <li>
-                    Assurer en parallele la mission de planification des projets
-                    de production GRC a grande echelle : parc de plus 5000
-                    collaborateurs.
-                  </li>
-                </ul>
+                <p>
+                  J'ai analysé, géré et surveillé en temps réel les KPI de
+                  production, créé des tableaux de bord et des rapports, et
+                  planifié les activités de production en fonction des
+                  indicateurs contractuels et des commandes pour optimiser la
+                  performance de production. J'ai également maintenu et
+                  développé la base de données CRM du département, ce qui m'a
+                  permis d'affiner mes compétences en programmation et en
+                  gestion de données. Mon engagement en faveur de l'excellence
+                  opérationnelle et de la gestion efficace des KPI de production
+                  a contribué de manière significative aux performances globales
+                  de l'entreprise.
+                </p>
               </div>
             </Fade>
             <Fade bottom>
               <div className="resume-item">
-                <h4>FullStack Web Developpeur </h4>
+                <h4>FULLSTACK ENGINEER Independant </h4>
                 <h5>2014 - present</h5>
                 <p>
                   <em>Auto-Entrepreneur/Freelancer Casablanca, Maroc</em>
                 </p>
-                <ul>
-                  <li>
-                    Developpement, conception de solutions informatiques sur
-                    mesure s'adaptant aux besoin des clients.
-                  </li>
-                  <li>
-                    Maintennance des projets deja en production ainsi que leurs
-                    evolutions.
-                  </li>
-                </ul>
+                <p>
+                  J'ai conçu et développé des projets web de bout en bout, géré
+                  la planification et la création d'interfaces utilisateur
+                  conviviales et réactives. J'ai également travaillé en étroite
+                  collaboration avec l'équipe pour assurer une intégration
+                  harmonieuse des front-end et back-end
+                </p>
               </div>
             </Fade>
           </div>

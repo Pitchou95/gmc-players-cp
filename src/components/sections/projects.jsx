@@ -102,7 +102,7 @@ const Projects = () => {
                 </h6>
                 <p
                   style={{
-                    backgroundColor: "#862A8E",
+                    backgroundColor: "#6c80a7",
                     borderRadius: "5px",
                     boxShadow: "2px 2px 2px 2px #e0a800",
 
@@ -169,7 +169,7 @@ const Projects = () => {
               Code
             </Button>
             <Button
-              style={{ backgroundColor: "#862A8E", border: "#862A8E" }}
+              style={{ backgroundColor: "#6c80a7", border: "#6c80a7" }}
               href={projetsList[projectToShowIndex].link}
               target="_blank"
               rel="noreferrer"
