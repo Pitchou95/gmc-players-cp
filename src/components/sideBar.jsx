@@ -91,6 +91,14 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
+              <a href="#contact">
+                <i>
+                  <BsEnvelopeOpen />
+                </i>
+                <span>Contact</span>
+              </a>
+            </li>
+            <li>
               <a
                 href="https://blog.laraibi.tech"
                 target="_blank"
@@ -100,14 +108,6 @@ const Sidebar = () => {
                   <FaBlog />
                 </i>
                 <span>Blog</span>
-              </a>
-            </li>
-            <li>
-              <a href="#contact">
-                <i>
-                  <BsEnvelopeOpen />
-                </i>
-                <span>Contact</span>
               </a>
             </li>
             <li>

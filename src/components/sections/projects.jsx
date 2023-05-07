@@ -45,7 +45,7 @@ const Projects = () => {
           </Slide>
         </div>
 
-        <div className="row d-flex flex-row justify-content-around align-items-center">
+        <div className="row d-flex flex-row ">
           {portfolio.map((project, key) => (
             <div key={`portfo-${key}`} className="col-lg-4 col-md-6 mt-5">
               <div className="portfolio-item ">
@@ -68,8 +68,12 @@ const Projects = () => {
                     </Zoom>
                   </div>
                 </div>
-                <div className="portfolio-wrap text-center">
-                  <img src={project.img} className="img-fluid" alt="" />
+                <div className="row">
+                  <div className="col">
+                    <div className="portfolio-wrap ">
+                      <img src={project.img} alt="" className="h-100"/>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -105,7 +109,6 @@ const Projects = () => {
                     backgroundColor: "#6c80a7",
                     borderRadius: "5px",
                     boxShadow: "2px 2px 2px 2px #e0a800",
-
                     color: "white",
                     padding: "8px 30px",
                     fontFamily: "Courier New, Courier, monospace",
@@ -118,10 +121,6 @@ const Projects = () => {
                     ].description.replaceAll("\n", "<li/>"),
                   }}
                 >
-                  {/* {`${.replaceAll(
-                    "\n",
-                    "<br/>"
-                  )}`} */}
                 </p>
               </div>
               <div className="col-md-4 col-sm-12">
