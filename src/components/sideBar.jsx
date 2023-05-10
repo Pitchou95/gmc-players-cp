@@ -24,7 +24,7 @@ const Sidebar = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://twitter.com/LaraibiM"
+              href="https://twitter.com/LaraibiMehdi"
               className="twitter"
             >
               <FiTwitter />
