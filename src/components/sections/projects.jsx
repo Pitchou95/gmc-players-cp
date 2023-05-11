@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiShowAlt } from "react-icons/bi";
-import projetsList from "../../assets/utils/data";
+import { projetsList } from "../../assets/utils/data";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Carousel from "better-react-carousel";
@@ -71,8 +71,24 @@ const Projects = () => {
                 <div className="row">
                   <div className="col">
                     <div className="portfolio-wrap ">
-                      <img src={project.img} alt="" className="h-100"/>
+                      <img src={project.img} alt="" className="h-100" />
                     </div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col">
+                    {projetsList[key].tags.map((tag, key) => (
+                      <Badge
+                        bg="warning"
+                        pill
+                        text="dark"
+                        className="p-2 m-1"
+                        key={key}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -120,8 +136,7 @@ const Projects = () => {
                       projectToShowIndex
                     ].description.replaceAll("\n", "<li/>"),
                   }}
-                >
-                </p>
+                ></p>
               </div>
               <div className="col-md-4 col-sm-12">
                 <h6

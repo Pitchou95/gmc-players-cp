@@ -71,6 +71,22 @@ const Resume = () => {
             <h3 className="resume-title">Experience Professionnelle</h3>
             <Fade bottom>
               <div className="resume-item">
+                <h4>Developeur FullStack Independant / FreeLancer </h4>
+                <h5>2019 - present</h5>
+                <p>
+                  <em>Auto-Entrepreneur Casablanca, Maroc</em>
+                </p>
+                <p>
+                  J'ai conçu et développé des projets web de bout en bout, géré
+                  la planification et la création d'interfaces utilisateur
+                  conviviales et réactives. J'ai également travaillé en étroite
+                  collaboration avec l'équipe pour assurer une intégration
+                  harmonieuse des front-end et back-end
+                </p>
+              </div>
+            </Fade>
+            <Fade bottom>
+              <div className="resume-item">
                 <h4>WFM Manager / Developpeur FullStack</h4>
                 <h5>2015 - 2022</h5>
                 <p>
@@ -88,22 +104,6 @@ const Resume = () => {
                   opérationnelle et de la gestion efficace des KPI de production
                   a contribué de manière significative aux performances globales
                   de l'entreprise.
-                </p>
-              </div>
-            </Fade>
-            <Fade bottom>
-              <div className="resume-item">
-                <h4>FULLSTACK ENGINEER Independant </h4>
-                <h5>2014 - present</h5>
-                <p>
-                  <em>Auto-Entrepreneur/Freelancer Casablanca, Maroc</em>
-                </p>
-                <p>
-                  J'ai conçu et développé des projets web de bout en bout, géré
-                  la planification et la création d'interfaces utilisateur
-                  conviviales et réactives. J'ai également travaillé en étroite
-                  collaboration avec l'équipe pour assurer une intégration
-                  harmonieuse des front-end et back-end
                 </p>
               </div>
             </Fade>

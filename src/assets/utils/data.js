@@ -19,7 +19,7 @@ const projetsList = [
     },
     link: "https://erp.laraibi.net",
     img: require("../../assets/img/portfolio/1 (5).png"),
-    gitHub:"https://github.com/Laraibi/"
+    gitHub: "https://github.com/Laraibi/"
   },
   {
     categorie: "Mobile App & AdminPanel",
@@ -41,7 +41,7 @@ const projetsList = [
     },
     link: "https://laraibi.tech",
     img: require("../../assets/img/portfolio/1 (6).png"),
-    gitHub:"https://github.com/Laraibi/"
+    gitHub: "https://github.com/Laraibi/"
   },
   {
     categorie: "FullStack Web Application",
@@ -70,7 +70,7 @@ const projetsList = [
     },
     link: "",
     img: require("../../assets/img/portfolio/1 (1).png"),
-    gitHub:""
+    gitHub: ""
   },
   {
     categorie: "FullStack Web Application",
@@ -91,7 +91,7 @@ const projetsList = [
     },
     link: "https://sms.laraibi.tech/",
     img: require("../../assets/img/portfolio/1 (2).png"),
-    gitHub:"https://github.com/Laraibi/SchoolManagementSystem"
+    gitHub: "https://github.com/Laraibi/SchoolManagementSystem"
   },
   {
     categorie: "Social Media",
@@ -118,7 +118,7 @@ const projetsList = [
     },
     link: "https://media.laraibi.tech",
     img: require("../../assets/img/portfolio/1 (3).png"),
-    gitHub:"https://github.com/Laraibi/Crud_SPA_Vue3_Laravel8"
+    gitHub: "https://github.com/Laraibi/Crud_SPA_Vue3_Laravel8"
   },
   {
     categorie: "CRM-DashBoard",
@@ -140,9 +140,11 @@ const projetsList = [
     },
     link: "https://mob.laraibi.tech",
     img: require("../../assets/img/portfolio/1 (4).png"),
-    gitHub:"https://github.com/Laraibi/Mobikisi"
+    gitHub: "https://github.com/Laraibi/Mobikisi"
   },
- 
+
 ];
 
-export default projetsList;
+const technlogiesNames = ["CSS 3", 'HTML 5', "JavaScript", "jQuery", "Laravel", "MySQL", "PHP", "Python", "Vue JS", "React JS", "React Native", "Bottstrap", "Tailwind CSS", "Material UI", "Node JS", "MongoDB", "ExpressJS", "JSON", "Power BI", "MS Excel VBA"]
+
+export { projetsList, technlogiesNames };

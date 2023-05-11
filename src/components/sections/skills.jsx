@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../../styles/skillStyles.scss";
 import { Slide } from "react-awesome-reveal";
 import { Roll } from "react-awesome-reveal";
-
+import { technlogiesNames } from "../../assets/utils/data";
 const Skills = () => {
   const [icons] = useState(() => {
     let arr = [];
@@ -40,12 +40,13 @@ const Skills = () => {
         <div className="skillsContainer">
           {icons.map((img, key) => (
             <Roll left key={key}>
-              <div className="skill">
+              <div className="skill text-center ">
                 <img
-                  className="img-skill img img-fluid w-100 h-100 p-3"
+                  className="img-skill img img-fluid w-75 h-75 p-3"
                   src={img}
                   alt=""
                 />
+              <h6 className="text-center">{technlogiesNames[key]}</h6>
               </div>
             </Roll>
           ))}
